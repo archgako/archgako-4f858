@@ -7,7 +7,6 @@ import Action from "./Action";
 
 function Header(props) {
   const header = props;
-  console.log(header, "JHEADER");
   return (
     <header id="masthead" className="site-header container ">
       <nav className="navbar container--lg" aria-label="Main Navigation">
