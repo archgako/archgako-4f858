@@ -10,6 +10,7 @@ html {
 
 body {
   background: #fff;
+  font-family: "Arsenal", "Roboto", sans-serif;
   color: $color-gray-600;
   line-height: 1.66667;
   -webkit-font-smoothing: antialiased;
@@ -17,13 +18,13 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-@each $font, $stack in $fonts {
-  $font-suffix: "#{$font}";
+// @each $font, $stack in $fonts {
+//   $font-suffix: "#{$font}";
 
-  .font-#{$font-suffix} {
-    font-family: $stack;
-  }
-}
+//   .font-#{$font-suffix} {
+//     font-family: $stack;
+//   }
+// }
 
 a {
   color: inherit;

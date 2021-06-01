@@ -1,0 +1,123 @@
+{
+    "title": "Site Configuration",
+    "locales": [
+        {
+            "locale": "en",
+            "title": "Archgako",
+            "domain": "https://archgako.studio",
+            "header": {
+                "title": "ARCHGAKÒ",
+                "logo": "https://images.ctfassets.net/cy2xk9ttqln5/19Hf82kmNnqvGdnNjPNBMf/c12b7155f79d5827a3c1da96699df585/Logo_Small.svg",
+                "logo_alt": "architecture and interior design",
+                "has_nav": true,
+                "nav_links": [
+                    {
+                        "label": "About",
+                        "url": "/en/about",
+                        "style": "link",
+                        "icon": "dribbble",
+                        "new_window": false,
+                        "no_follow": false,
+                        "type": "action"
+                    },
+                    {
+                        "label": "Projects",
+                        "url": "/en/projects",
+                        "style": "link",
+                        "icon": "dribbble",
+                        "new_window": false,
+                        "no_follow": false,
+                        "type": "action"
+                    }
+                ],
+                "type": "header"
+            }
+        },
+        {
+            "locale": "ru",
+            "title": "Archgako",
+            "domain": "https://archgako.studio",
+            "header": {
+                "title": "ARCHGAKÒ",
+                "logo": "https://images.ctfassets.net/cy2xk9ttqln5/19Hf82kmNnqvGdnNjPNBMf/c12b7155f79d5827a3c1da96699df585/Logo_Small.svg",
+                "logo_alt": "architecture and interior design",
+                "has_nav": true,
+                "nav_links": [
+                    {
+                        "label": "О студии",
+                        "url": "/about/",
+                        "style": "link",
+                        "type": "action"
+                    },
+                    {
+                        "label": "Проекты",
+                        "url": "/projects",
+                        "style": "link",
+                        "icon": "dribbble",
+                        "new_window": false,
+                        "no_follow": false,
+                        "type": "action"
+                    },
+                    {
+                        "label": "Work",
+                        "url": "/portfolio/",
+                        "style": "link",
+                        "type": "action"
+                    },
+                    {
+                        "label": "Journal",
+                        "url": "/blog/",
+                        "style": "link",
+                        "type": "action"
+                    },
+                    {
+                        "label": "Contact",
+                        "url": "/contact/",
+                        "style": "button",
+                        "type": "action"
+                    }
+                ],
+                "type": "header"
+            },
+            "footer": {
+                "content": "&copy; Stackbit. All rights reserved. This Jamstack site was created with <a href=\"https://www.stackbit.com/?utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">Stackbit</a>. Create yours <a href=\"https://app.stackbit.com/create?theme=agency&utm_source=deployed-footer\" target=\"_blank\" rel=\"noopener\">now</a>",
+                "has_social": true,
+                "social_links": [
+                    {
+                        "label": "Twitter",
+                        "url": "https://twitter.com/",
+                        "style": "icon",
+                        "icon": "twitter",
+                        "new_window": true,
+                        "type": "action"
+                    },
+                    {
+                        "label": "Instagram",
+                        "url": "https://www.instagram.com/",
+                        "style": "icon",
+                        "icon": "instagram",
+                        "new_window": true,
+                        "type": "action"
+                    },
+                    {
+                        "label": "Dribbble",
+                        "url": "https://dribbble.com/",
+                        "style": "icon",
+                        "icon": "dribbble",
+                        "new_window": true,
+                        "type": "action"
+                    },
+                    {
+                        "label": "LinkedIn",
+                        "url": "https://www.linkedin.com/",
+                        "style": "icon",
+                        "icon": "linkedin",
+                        "new_window": true,
+                        "type": "action"
+                    }
+                ],
+                "type": "footer"
+            }
+        }
+    ]
+}
