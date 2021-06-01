@@ -13,7 +13,7 @@ sections:
       talk](/contact/).
     type: hero_section
   - section_id: latest-projects
-    title: Recent Work
+    title: Последние проекты
     subtitle: Explore case studies
     layout_style: tiles
     projects_number: 6
@@ -96,7 +96,7 @@ sections:
       about your project by getting started below.
     actions:
       - label: Let's start
-        url: /contact
+        url: /en/contact
         style: button
         type: action
     image: >-

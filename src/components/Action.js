@@ -13,7 +13,7 @@ export default class Action extends React.Component {
             <Link to={withPrefix(_.get(action, 'url', null))}
               {...(_.get(action, 'new_window', null) ? ({target: '_blank'}) : null)}
               {...((_.get(action, 'new_window', null) || _.get(action, 'no_follow', null)) ? ({rel: (_.get(action, 'new_window', null) ? ('noopener ') : '') + (_.get(action, 'no_follow', null) ? ('nofollow') : '')}) : null)}
-              className={classNames({'button': action_style !== 'link', 'button--primary': action_style === 'button', 'button--icon': action_style === 'icon'})}>
+              className={this.props.className ? this.props.className + ' ' + classNames({'button': action_style !== 'link', 'button--primary': action_style === 'button', 'button--icon': action_style === 'icon'}) : classNames({'button': action_style !== 'link', 'button--primary': action_style === 'button', 'button--icon': action_style === 'icon'})}>
               {(action_style === 'icon') ? (<React.Fragment>
                 <Icon {...this.props} icon={action_icon} />
                 <span className="screen-reader-text">{_.get(action, 'label', null)}</span>

@@ -27,9 +27,9 @@ export default class Body extends React.Component {
   }
 
   render() {
-    const font =
-      _.get(this.props, "pageContext.site.siteMetadata.base_font", null) ||
-      "fraunces";
+    // const font =
+    //   _.get(this.props, "pageContext.site.siteMetadata.base_font", null) ||
+    //   "fraunces";
 
     const locale = this.getLocale(_.get(this.props, "path"));
     const siteMetadataLocales = _.get(
@@ -147,7 +147,7 @@ export default class Body extends React.Component {
           />
         </Helmet>
         <div id="site-wrap" className="site">
-          <Header {...localeData.header} />
+          <Header {...localeData.header} site={this.props} />
           <main id="content" className="site-content">
             {this.props.children}
           </main>

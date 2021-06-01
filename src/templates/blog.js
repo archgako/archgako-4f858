@@ -18,8 +18,11 @@ export const query = graphql`
 
 export default class Blog extends React.Component {
     render() {
+      console.log(this.props, 'BLOG')
         let col_number = _.get(this.props, 'pageContext.frontmatter.col_number', null) || 'three';
-        let posts_sorted = _.orderBy(getPages(this.props.pageContext.pages, '/blog'), 'frontmatter.date', 'desc');
+        let locale = _.get(this.props, 'pageContext.frontmatter.locale', null)
+        locale === 'ru' ? locale = '' : locale;
+        let posts_sorted = _.orderBy(getPages(this.props.pageContext.pages, `${locale}/blog`), 'frontmatter.date', 'desc');
         return (
             <Layout {...this.props}>
             <header className={classNames('section', 'section--header', {'screen-reader-text': _.get(this.props, 'pageContext.frontmatter.hide_title', null)})}>

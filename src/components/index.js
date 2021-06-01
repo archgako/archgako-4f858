@@ -15,6 +15,7 @@ import ImageSection from './ImageSection';
 import PortfolioItem from './PortfolioItem';
 import PortfolioSection from './PortfolioSection';
 import PostsSection from './PostsSection';
+import TeamMemberSection from './TeamMemberSection';
 import TestimonialsSection from './TestimonialsSection';
 import TextSection from './TextSection';
 import Layout from './Layout';
@@ -37,6 +38,7 @@ export {
     PortfolioItem,
     PortfolioSection,
     PostsSection,
+    TeamMemberSection,
     TestimonialsSection,
     TextSection,
     Layout
@@ -60,6 +62,7 @@ export default {
     PortfolioItem,
     PortfolioSection,
     PostsSection,
+    TeamMemberSection,
     TestimonialsSection,
     TextSection,
     Layout

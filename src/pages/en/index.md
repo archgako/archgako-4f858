@@ -13,7 +13,7 @@ sections:
       talk](/contact/).
     type: hero_section
   - section_id: latest-projects
-    title: Recent Work
+    title: Последние проекты
     subtitle: Explore case studies
     layout_style: tiles
     projects_number: 6
@@ -96,7 +96,7 @@ sections:
       about your project by getting started below.
     actions:
       - label: Let's start
-        url: /contact
+        url: /en/contact
         style: button
         type: action
     image: >-
@@ -104,6 +104,14 @@ sections:
     image_alt: Illustration
     bg_color: light
     type: cta_section
+  - section_id: quote-ru
+    top_line: false
+    image_position: bottom
+    content: |-
+      >Хороший дизайн упрощает запутанный мир
+      >
+      >&mdash; фотограф Platon
+    type: content_section
 template: advanced
 stackbit_url_path: /en/
 ---

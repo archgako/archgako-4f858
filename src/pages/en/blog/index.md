@@ -1,7 +1,7 @@
 ---
-locale: ru
-title: Блог
-subtitle: 'Рассказываем о дизайне интерьеров, колористике и архитектуре. '
+locale: en
+title: Blog
+subtitle: 'News, tips and highlights'
 hide_title: false
 col_number: three
 seo:
@@ -40,5 +40,5 @@ seo:
       type: stackbit_page_meta_extra
   type: stackbit_page_meta
 template: blog
-stackbit_url_path: /blog/
+stackbit_url_path: /en/blog/
 ---

@@ -5,6 +5,40 @@
     margin-bottom: 5em;
   }
 
+  &_img-left,
+  &_img-right {
+    display: flex;
+  }
+
+  &_img-left {
+    .section__image {
+      order: 0;
+    }
+    .section__content {
+      order: 1;
+      margin-left: 4.25em;
+    }
+  }
+  &_img-right {
+    .section__content {
+      margin-right: 4.25em;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    &_img-left,
+    &_img-right {
+      display: block;
+      .section__content {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .section__image {
+        text-align: center;
+      }
+    }
+  }
+
   &__bg {
     background-color: $color-gray-50;
     padding: 1.66667em;

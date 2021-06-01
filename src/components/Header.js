@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import _ from "lodash";
 
 import { Link, withPrefix, classNames } from "../utils";
@@ -7,9 +7,10 @@ import Action from "./Action";
 
 function Header(props) {
   const header = props;
+  console.log(header, "JHEADER");
   return (
-    <header id="masthead" className="site-header container">
-      <nav className="navbar" aria-label="Main Navigation">
+    <header id="masthead" className="site-header container ">
+      <nav className="navbar container--lg" aria-label="Main Navigation">
         {header.logo ? (
           <div className="navbar__logo">
             <Link to={withPrefix("/")}>
@@ -42,29 +43,57 @@ function Header(props) {
                   <span className="icon-close" aria-hidden="true" />
                 </button>
                 <ul className="navbar__menu menu">
-                  {_.map(
-                    header.nav_links,
-                    (action, action_idx) => {
-                      let pageUrl = _.trim(
-                        _.get(props, "pageContext.url", null),
-                        "/"
-                      );
-                      let actionUrl = _.trim(_.get(action, "url", null), "/");
+                  {_.map(header.nav_links, (action, action_idx) => {
+                    let pageUrl = _.trim(
+                      _.get(props, "pageContext.url", null),
+                      "/"
+                    );
+                    let actionUrl = _.trim(_.get(action, "url", null), "/");
+                    return (
+                      <li
+                        key={action_idx}
+                        className={classNames("menu__item", {
+                          "menu__item--current": pageUrl === actionUrl,
+                          "menu__item--button":
+                            _.get(action, "style", null) !== "link",
+                        })}
+                      >
+                        <Action {...props} action={action} />
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                <div className="navbar__extra">
+                  <a
+                    href={`tel:${header.phone}`}
+                    className="navbar__phone navbar__extra-item"
+                  >
+                    {header.phone}
+                  </a>
+                  <ul className="navbar__locales navbar__extra-item">
+                    {header.locales.map((locale) => {
                       return (
-                        <li
-                          key={action_idx}
-                          className={classNames("menu__item", {
-                            "menu__item--current": pageUrl === actionUrl,
-                            "menu__item--button":
-                              _.get(action, "style", null) !== "link",
-                          })}
-                        >
-                          <Action {...props} action={action} />
+                        <li key={locale} className="navbar__locales-item">
+                          <Link
+                            // to={`/${locale}${props.site.path}`}
+                            to={
+                              locale === "ru"
+                                ? _.trim(props.site.path, "ruen/")
+                                :  `/${locale}/${_.trim(props.site.path, "ruen/")}`
+                            }
+                          >
+                            {locale}
+                          </Link>
                         </li>
                       );
-                    }
-                  )}
-                </ul>
+                    })}
+                  </ul>
+                  <Action
+                    className="navbar__extra-item"
+                    action={header.contact}
+                  />
+                </div>
               </div>
             </div>
           </React.Fragment>
@@ -79,9 +108,9 @@ Header.propTypes = {
   logo: PropTypes.string,
   logo_alt: PropTypes.string,
   nav_links: PropTypes.array,
-}
+};
 
-export default Header
+export default Header;
 // export default class Header extends React.Component {
 
 //     render() {
