@@ -42,10 +42,10 @@ export default class TeamMemberSection extends React.Component {
                   {_.get(section, "name", null)}
                 </h3>
                 <ul className="team-member__professions">
-                  {_.get(section, "professions", null).map((profession) => {
+                  {_.get(section, "professions", null).map((profession, index) => {
                     return (
                       <li
-                        key={profession}
+                        key={profession + index}
                         className="team-member__professions-item"
                       >
                         {profession}
@@ -55,9 +55,9 @@ export default class TeamMemberSection extends React.Component {
                 </ul>
               </div>
               <ul className="team-member__education">
-                {_.get(section, "education", null).map((education) => {
+                {_.get(section, "education", null).map((education, index) => {
                   return (
-                    <li key={education} className="team-member__education_item">
+                    <li key={education + index} className="team-member__education_item">
                       {education}
                     </li>
                   );
@@ -72,7 +72,7 @@ export default class TeamMemberSection extends React.Component {
                 <Icon icon="phone"/>
                     <div className="team-member__phones-wrapper">
                         {_.get(section, 'phones', null).map(item => {
-                            return <a key={item} href={`tel:${item.phone}`} className="team-member__phones-item">{item.phone} <span className="accent">{item.locale}</span></a>
+                            return <a key={item.phone} href={`tel:${item.phone}`} className="team-member__phones-item">{item.phone} <span className="accent">{item.locale}</span></a>
                         })}
                         
                     </div>

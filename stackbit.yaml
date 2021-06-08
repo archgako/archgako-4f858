@@ -161,6 +161,7 @@ models:
             - posts_section
             - testimonials_section
             - form_section
+            - team_member_section
       - type: model
         name: seo
         models:
@@ -265,7 +266,7 @@ models:
           - stackbit_page_meta
   post:
     type: page
-    urlPath: '/blog/{slug}'
+    urlPath: "/blog/{slug}"
     label: Post
     layout: post
     folder: blog
@@ -309,7 +310,7 @@ models:
           - stackbit_page_meta
   project:
     type: page
-    urlPath: '/portfolio/{slug}'
+    urlPath: "/portfolio/{slug}"
     label: Project
     layout: project
     folder: portfolio
@@ -357,7 +358,7 @@ models:
       - type: string
         name: section_id
         label: ID
-        description: 'A unique identifier of the section, must not contain whitespace'
+        description: "A unique identifier of the section, must not contain whitespace"
       - type: string
         name: title
         label: Title
@@ -389,6 +390,9 @@ models:
         name: subtitle
         label: Subtitle
         description: The subtitle of the section
+      - type: boolean
+        name: top_line  
+        label: Добавить верхнюю линию над заголовком?
       - type: image
         name: image
         label: Image
@@ -397,10 +401,70 @@ models:
         name: image_alt
         label: Image alt text
         description: The alt text of the section image
+      - type: enum
+        name: image_position
+        label: Image alt text
+        description: Расположение изображения относительно текста
+        options: 
+          - bottom
+          - left
+          - right
+          default: bottom
       - type: markdown
         name: content
         label: Content
         description: The text content of the section
+  team_member_section:
+    type: object
+    label: Team Member Section
+    extends:
+      - section
+    fields:
+      - type: string
+        name: name
+        label: Name
+        description: Name of team member (full)
+      - type: enum
+        name: photo_position
+        label: Photo Position
+        description: Расположение фото относительно текста
+        options:
+          - left
+          - right
+        default: left
+      - type: image
+        name: photo
+        label: Photo
+        description: Photo of team member
+      - type: enum
+        name: bg_color
+        label: Photo Background Color
+        description: Цвет фона фотографии
+        options:
+          - black
+          - brown
+        default: brown
+      - type: list
+        name: professions
+        label: Professions
+      - type: list
+        name: education
+        label: Education
+      - type: list
+        name: phones
+        label: Phones
+        items:
+          type: model
+          models:
+            - phone
+      - type: string
+        name: instagram
+        label: Instagram
+        description: Instagram
+      - type: markdown
+        name: content
+        label: Content
+        description: Подробное описание
   cta_section:
     type: object
     label: CTA Section
@@ -523,7 +587,7 @@ models:
       - type: string
         name: view_all_url
         label: All projects button URL
-        default: '#'
+        default: "#"
   posts_section:
     type: object
     label: Posts Section
@@ -617,7 +681,7 @@ models:
       - type: string
         name: form_id
         label: Form ID
-        description: 'A unique identifier of the form, must not contain whitespace'
+        description: "A unique identifier of the form, must not contain whitespace"
         required: true
       - type: string
         name: form_action
@@ -661,12 +725,12 @@ models:
       - type: string
         name: name
         label: Name
-        description: 'The name of the field, submitted with the form'
+        description: "The name of the field, submitted with the form"
         required: true
       - type: string
         name: label
         label: Label
-        description: 'The caption of the field, shown above the field input'
+        description: "The caption of the field, shown above the field input"
       - type: string
         name: default_value
         label: Placeholder or default value
@@ -727,7 +791,7 @@ models:
         name: url
         label: URL
         required: true
-        default: '#'
+        default: "#"
       - type: enum
         name: style
         label: Style
@@ -768,12 +832,12 @@ models:
         name: title
         label: Title
         description: The page title that goes into the <title> tag
-        default: ''
+        default: ""
       - type: string
         name: description
         label: Description
         description: The page description that goes into the <meta name="description"> tag
-        default: ''
+        default: ""
       - type: list
         name: robots
         label: Robots
@@ -801,12 +865,29 @@ models:
           fields:
             - type: string
               name: name
-              default: ''
+              default: ""
             - type: string
               name: value
-              default: ''
+              default: ""
             - type: string
               name: keyName
               default: name
             - type: boolean
               name: relativeUrl
+  phone:
+    type: object
+    label: Phone
+    fields:
+      - type: string
+        name: phone
+        label: Phone
+        description: Phone Number
+      - type: enum
+        name: locale
+        label: Locale
+        description: Phone Locale
+        options:
+          - RUS
+          - EU
+        default: RUS
+
