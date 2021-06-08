@@ -422,7 +422,7 @@ models:
     fields:
       - type: string
         name: name
-        label: Имя
+        label: Name
         description: Name of team member (full)
       - type: enum
         name: photo_position
