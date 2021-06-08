@@ -447,9 +447,13 @@ models:
       - type: list
         name: professions
         label: Professions
+        items:
+          type: string
       - type: list
         name: education
         label: Education
+    items:
+      type: string
       - type: list
         name: phones
         label: Phones
