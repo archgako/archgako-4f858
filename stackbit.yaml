@@ -452,8 +452,8 @@ models:
       - type: list
         name: education
         label: Education
-    items:
-      type: string
+        items:
+          type: string
       - type: list
         name: phones
         label: Phones
